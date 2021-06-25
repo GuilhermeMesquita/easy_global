@@ -21,9 +21,9 @@ var process = () => {
             this.onload.startSeconds();
         },
 
-        // Condição para validar se o retorno voltou undefined.
-        undefinedCondition: function (element) {
-            return element == undefined ? '' : element
+        // Condição para validar de maneira booleana certas situações.
+        globalCondition: function (bool) {
+            return bool;
         },
 
         // Função que retorna os valores do DS customizado (Formulário Auxiliar de cadastro de filiais)
@@ -82,6 +82,8 @@ var process = () => {
                         "Houve um erro! Favor recarregar a página.\n",
                         "danger"
                     );
+
+                    globalCondition(false);
                 }
                 document.querySelector("#tableDashboard tbody").innerHTML += "<tr>" +
                     "<td>" + ds_form_eg_aux.values[i]["Filial"] + "</td>" +
@@ -172,7 +174,8 @@ var process = () => {
                     segundos_atual++;
                     console.log("segundos..." + segundos_atual);
                 }
-                return setInterval("this.startSeconds()", 1000);
+                if (process().globalCondition() != false)
+                    setInterval("process().onload.startSeconds()", 1000);
             },
         }
     }
