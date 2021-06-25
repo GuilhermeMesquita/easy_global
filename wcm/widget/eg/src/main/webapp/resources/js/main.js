@@ -82,9 +82,6 @@ var process = () => {
                         "Houve um erro! Favor recarregar a página.\n",
                         "danger"
                     );
-
-
-
                 }
                 document.querySelector("#tableDashboard tbody").innerHTML += "<tr>" +
                     "<td>" + ds_form_eg_aux.values[i]["Filial"] + "</td>" +
@@ -167,12 +164,16 @@ var process = () => {
         },
 
         onload: {
+
             startSeconds: function () {
                 for (var i = 0; i < $("#tableDashboard tbody > tr").length; i++) {
                     var horario_atual = document.querySelector(`#horario_atual___${i}`);
                     var segundos_atual = horario_atual.innerText.split(":")[2];
                     segundos_atual++;
+                    console.log(segundos_atual);
                 }
+                var contador = setInterval(this.startSeconds(), 1000);
+                console.log("\n counter... \n" + contador);
             }
         }
     }
