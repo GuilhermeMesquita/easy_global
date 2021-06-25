@@ -182,28 +182,26 @@ var process = () => {
 
                     segundos_atual = Number(++segundos_atual);
 
-                    var horas_contador = horario_atual.innerText.split(":")[0] = horas_atual;
-                    var minutos_contador = horario_atual.innerText.split(":")[1] = minutos_atual;
-                    var segundos_contador = horario_atual.innerText.split(":")[2] = segundos_atual;
+                    // var horas_contador = horario_atual.innerText.split(":")[0] = horas_atual;
 
                     if (segundos_atual >= 60) {
                         minutos_atual = Number(++minutos_atual);
                         segundos_atual = Number("00");
-                        horario_atual.innerText = horas_contador + ":" + minutos_atual + ":" + segundos_atual;
+                        horario_atual.innerText = horas_atual + ":" + minutos_atual + ":" + segundos_atual;
                     }
 
                     if (minutos_atual >= 60) {
                         horas_atual = Number(++horas_atual);
                         minutos_atual = Number("00");
-                        horario_atual.innerText = horas_contador + ":" + minutos_atual + ":" + segundos_atual;
+                        horario_atual.innerText = horas_atual + ":" + minutos_atual + ":" + segundos_atual;
                     }
 
                     if (horas_atual > 23) {
                         horas_atual = Number("00");
-                        horario_atual.innerText = horas_contador + ":" + minutos_contador + ":" + segundos_contador;
+                        horario_atual.innerText = horas_atual + ":" + minutos_atual + ":" + segundos_atual;
                     }
 
-                    horario_atual.innerText = horas_contador + ":" + minutos_contador + ":" + segundos_contador;
+                    horario_atual.innerText = horas_atual + ":" + minutos_atual + ":" + segundos_atual;
                     // Desenvolver funcao para este innerText
                 }
             },
