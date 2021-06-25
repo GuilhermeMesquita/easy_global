@@ -182,15 +182,15 @@ var process = () => {
 
                     segundos_atual = Number(++segundos_atual);
 
-                    var horas_contador = horario_atual.innerText.split(":")[2] = horas_atual;
-                    var minutos_contador = horario_atual.innerText.split(":")[2] = minutos_atual;
+                    var horas_contador = horario_atual.innerText.split(":")[0] = horas_atual;
+                    var minutos_contador = horario_atual.innerText.split(":")[1] = minutos_atual;
                     var segundos_contador = horario_atual.innerText.split(":")[2] = segundos_atual;
 
                     if (segundos_atual >= 60) {
                         minutos_atual = Number(++minutos_atual);
                     }
 
-                    if (minutos_atual > 60) {
+                    if (minutos_atual >= 60) {
                         horas_atual = Number(++horas_atual);
                     }
 
