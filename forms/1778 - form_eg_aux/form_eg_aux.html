@@ -1,0 +1,102 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="styles.css">
+	<script src="./egFuncs.js" defer></script>
+	<script src="./main.js"></script>
+</head>
+
+<body>
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+			<div class="row">
+				<div class="col-md-12">
+
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								Cadastro filiais
+							</h3>
+						</div>
+
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-8 col-md-offset-2">
+									<table class="table table-condensed" id="table_registros"
+										tablename="table_registros">
+										<thead>
+											<tr>
+												<th style="width:40%;">Filial</th>
+												<th style="width:40%;">Continente</th>
+												<th style="width:40%;">País</th>
+												<th style="width:50%;">Cidade</th>
+												<th style="width:50%;">Horário</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="firstRow">
+												<td class="form-group">
+													<input name="filial" id="filial" class="form-control"
+														style="width: 8rem;" onblur="verify()">
+												</td>
+												<td class="form-group">
+													<select name="continente" id="continente" class="form-control"
+														style="width: 8rem;" onblur="verify()">
+														<option value="America">America</option>
+														<option value="Asia">Asia</option>
+														<option value="Europe">Europe</option>
+														<option value="Africa">Africa</option>
+														<option value="Oceania">Oceania</option>
+													</select>
+												</td>
+												<td class="form-group">
+													<input type="zoom" id="pais" name="pais" style="width: 8rem;"
+														data-zoom="{
+														'displayKey':'country',
+														'datasetId':'ds_easy_global_cadastro_paises',
+														'placeholder':'Escolha um grupo',
+														'fields':[
+															{
+															'field':'country',
+															'label':'País'
+															}
+														]
+													}" />
+												</td>
+												<td class="form-group">
+													<input name="cidade" id="cidade" class="form-control"
+														style="width: 8rem;" onblur="verify()">
+												</td>
+												<td class="form-group">
+													<input type="text" name="horario" id="horario" class="form-control"
+														style="width: 5rem;" onblur="verify()">
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="camposHidden">
+				<input type="hidden" name="flag" value="true" id="flag">
+			</div>
+		</form>
+	</div>
+
+	<!-- Importação do Select2 -->
+	<script src="./select2/select2.js"></script>
+	<script src="./select2/pt-BR.js"></script>
+
+	<script src="./select2/select2-bootstrap.css"></script>
+	<script src="./select2/select2.min.css"></script>
+</body>
+
+</html>
