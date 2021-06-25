@@ -170,11 +170,10 @@ var process = () => {
                     var horario_atual = document.querySelector(`#horario_atual___${i}`);
                     var segundos_atual = horario_atual.innerText.split(":")[2];
                     segundos_atual++;
-                    console.log(segundos_atual);
+                    console.log("segundos..." + segundos_atual);
                 }
-                var contador = setInterval(this.startSeconds(), 1000);
-                console.log("\n counter... \n" + contador);
-            }
+                return setInterval("this.startSeconds()", 1000);
+            },
         }
     }
     return processo;
