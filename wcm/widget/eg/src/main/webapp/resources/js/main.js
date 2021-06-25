@@ -77,6 +77,8 @@ var process = () => {
                         "Houve um erro! Favor recarregar a página.\n",
                         "danger"
                     );
+
+                    $("#tableDashboard tbody > tr").length = 0;
                 }
                 document.querySelector("#tableDashboard tbody").innerHTML += "<tr>" +
                     "<td>" + ds_form_eg_aux.values[i]["Filial"] + "</td>" +
