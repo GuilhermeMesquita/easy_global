@@ -164,7 +164,7 @@ var process = () => {
 
             // Método responsável por chamar a função startSeconds.
             getSeconds: function () {
-                if (document.querySelector("[id^=main_panel]").style.display != "none" && $("#tableDashboard tbody > tr").length != 0) {
+                if (document.querySelector("[id^=main_panel]").style.display != "none") {
                     setInterval("process().onload.startSeconds()", 1000);
                 } else {
                     return processo;
