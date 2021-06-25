@@ -164,7 +164,7 @@ var process = () => {
         },
 
         onload: {
-
+            // Método responsável por contar os segundos em tempo real.
             startSeconds: function () {
                 for (var i = 0; i < $("#tableDashboard tbody > tr").length; i++) {
                     var horario_atual = document.querySelector(`#horario_atual___${i}`);
