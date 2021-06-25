@@ -164,7 +164,7 @@ var process = () => {
 
             // Método responsável por chamar a função startSeconds.
             getSeconds: function () {
-                if (document.querySelector("[id^=main_panel]").style.display != "none") {
+                if (document.querySelector("[id^=main_panel]").style.display != "none" && $("#tableDashboard tbody > tr").length != 0) {
                     setInterval("process().onload.startSeconds()", 1000);
                 } else {
                     return processo;
@@ -175,12 +175,30 @@ var process = () => {
             startSeconds: function () {
                 for (var i = 0; i < $("#tableDashboard tbody > tr").length; i++) {
                     var horario_atual = document.querySelector(`#horario_atual___${i}`);
+
+                    var horas_atual = horario_atual.innerText.split(":")[0];
+                    var minutos_atual = horario_atual.innerText.split(":")[1];
                     var segundos_atual = horario_atual.innerText.split(":")[2];
 
                     segundos_atual = Number(++segundos_atual);
+
+                    var horas_contador = horario_atual.innerText.split(":")[2] = horas_atual;
+                    var minutos_contador = horario_atual.innerText.split(":")[2] = minutos_atual;
                     var segundos_contador = horario_atual.innerText.split(":")[2] = segundos_atual;
 
-                    horario_atual.innerText = horario_atual.innerText.split(":")[0] + ":" + horario_atual.innerText.split(":")[1] + ":" + segundos_contador;
+                    if (segundos_atual >= 60) {
+                        minutos_atual = Number(++minutos_atual);
+                    }
+
+                    if (minutos_atual > 60) {
+                        horas_atual = Number(++horas_atual);
+                    }
+
+                    if (horas_atual > 23) {
+                        horas_atual = Number("00");
+                    }
+
+                    horario_atual.innerText = horas_contador + ":" + minutos_contador + ":" + segundos_contador;
                 }
             },
         }
