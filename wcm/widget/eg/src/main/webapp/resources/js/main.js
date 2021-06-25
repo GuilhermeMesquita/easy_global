@@ -188,17 +188,23 @@ var process = () => {
 
                     if (segundos_atual >= 60) {
                         minutos_atual = Number(++minutos_atual);
+                        segundos_atual = Number("00");
+                        horario_atual.innerText = horas_contador + ":" + minutos_atual + ":" + segundos_atual;
                     }
 
                     if (minutos_atual >= 60) {
                         horas_atual = Number(++horas_atual);
+                        minutos_atual = Number("00");
+                        horario_atual.innerText = horas_contador + ":" + minutos_atual + ":" + segundos_atual;
                     }
 
                     if (horas_atual > 23) {
                         horas_atual = Number("00");
+                        horario_atual.innerText = horas_contador + ":" + minutos_contador + ":" + segundos_contador;
                     }
 
                     horario_atual.innerText = horas_contador + ":" + minutos_contador + ":" + segundos_contador;
+                    // Desenvolver funcao para este innerText
                 }
             },
         }
