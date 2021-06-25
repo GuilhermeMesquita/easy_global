@@ -18,12 +18,7 @@ var process = () => {
             console.log("easy_global - init");
             this.events();
             await this.reqTimezone();
-            this.onload.startSeconds();
-        },
-
-        // Condição para validar de maneira booleana certas situações.
-        globalCondition: function (bool) {
-            return bool;
+            this.onload.getSeconds();
         },
 
         // Função que retorna os valores do DS customizado (Formulário Auxiliar de cadastro de filiais)
@@ -82,8 +77,6 @@ var process = () => {
                         "Houve um erro! Favor recarregar a página.\n",
                         "danger"
                     );
-
-                    globalCondition(false);
                 }
                 document.querySelector("#tableDashboard tbody").innerHTML += "<tr>" +
                     "<td>" + ds_form_eg_aux.values[i]["Filial"] + "</td>" +
@@ -166,16 +159,24 @@ var process = () => {
         },
 
         onload: {
+
+            // Método responsável por chamar a função startSeconds.
+            getSeconds: function () {
+                if (document.querySelector("[id^=main_panel]").style.display != "none") {
+                    setInterval("process().onload.startSeconds()", 1000);
+                } else {
+                    return processo;
+                }
+            },
+
             // Método responsável por contar os segundos em tempo real.
             startSeconds: function () {
                 for (var i = 0; i < $("#tableDashboard tbody > tr").length; i++) {
                     var horario_atual = document.querySelector(`#horario_atual___${i}`);
                     var segundos_atual = horario_atual.innerText.split(":")[2];
-                    segundos_atual++;
+                    segundos_atual += segundos_atual++;
                     console.log("segundos..." + segundos_atual);
                 }
-                if (process().globalCondition() != false)
-                    setInterval("process().onload.startSeconds()", 1000);
             },
         }
     }
