@@ -174,8 +174,11 @@ var process = () => {
                 for (var i = 0; i < $("#tableDashboard tbody > tr").length; i++) {
                     var horario_atual = document.querySelector(`#horario_atual___${i}`);
                     var segundos_atual = horario_atual.innerText.split(":")[2];
-                    segundos_atual += segundos_atual++;
-                    console.log("segundos..." + segundos_atual);
+
+                    segundos_atual = Number(++segundos_atual);
+                    var segundos_contador = horario_atual.innerText.split(":")[2] = segundos_atual;
+
+                    horario_atual.innerText = horario_atual.innerText.split(":")[0] + ":" + horario_atual.innerText.split(":")[1] + ":" + segundos_contador;
                 }
             },
         }
