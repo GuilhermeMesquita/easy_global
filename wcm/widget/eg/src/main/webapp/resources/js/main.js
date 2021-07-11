@@ -19,7 +19,6 @@ var process = () => {
             this.events();
             await this.reqTimezone();
             this.onload.getSeconds();
-            this.onload.alignItems();
         },
 
         // Função que retorna os valores do DS customizado (Formulário Auxiliar de cadastro de filiais)
@@ -62,7 +61,10 @@ var process = () => {
 
 
                 dttable.push(obj_req);
-                if (e == urls[urls.length - 1]) this.initializeDataTable(dttable);
+                if (e == urls[urls.length - 1]) {
+                    this.initializeDataTable(dttable);
+                    this.onload.alignItems();
+                }
             });
         },
 
@@ -72,7 +74,7 @@ var process = () => {
             for (var i = 0; i < ds_form_eg_aux.values.length; i++) {
                 if (tabela[i] === undefined) {
                     $("[class^=wcm-all-content]").css("opacity", "0.5");
-                    $("[id^=main_panel]").css("display", "none");
+                    $("[id^=main_panel]").remove();
 
                     this.showToast("Erro.\n",
                         "Houve um erro! Favor recarregar a página.\n",
@@ -122,7 +124,9 @@ var process = () => {
                 scrollX: true,
                 dom: 'Bfrtip',
                 buttons: [
-                    'excel', 'pdf', 'print'
+                    { extend: 'excel', className: 'btn btn-outline-secondary', id: 'excel-mr' },
+                    { extend: 'pdf', className: 'btn btn-outline-secondary' },
+                    { extend: 'print', className: 'btn btn-outline-secondary' }
                 ],
                 language: {
                     sSearch: 'Buscar:',
@@ -219,9 +223,9 @@ var process = () => {
 
             alignItems: function () {
                 document.querySelector(".pageTitle").style.textAlign = "center";
-                document.querySelector(".dt-buttons").style.display = "flex"
-                document.querySelector(".dt-buttons").style.justifyContent = "flex-end"
-                document.querySelector(".dt-buttons").style.marginBottom = "2%"
+                document.querySelector(".dt-buttons").style.display = "flex";
+                document.querySelector(".dt-buttons").style.justifyContent = "flex-end";
+                document.querySelector(".dt-buttons").style.marginBottom = "2%";
             }
         }
     }
