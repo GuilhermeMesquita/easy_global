@@ -119,6 +119,10 @@ var process = () => {
                 bAutoWidth: true,
                 pageLength: 5,
                 scrollX: true,
+                dom: 'Bfrtip',
+                buttons: [
+                    'excel', 'pdf', 'print'
+                ],
                 language: {
                     sSearch: 'Buscar:',
                     sEmptyTable: 'Nenhum registro encontrado',
@@ -181,23 +185,29 @@ var process = () => {
                     var segundos_atual = horario_atual.innerText.split(":")[2];
 
                     segundos_atual = Number(++segundos_atual);
+                    if (segundos_atual < 10) {
+                        segundos_atual = "0" + segundos_atual;
+                    }
 
                     // var horas_contador = horario_atual.innerText.split(":")[0] = horas_atual;
 
                     if (segundos_atual >= 60) {
-                        minutos_atual = Number(++minutos_atual);
-                        segundos_atual = Number("00");
+                        minutos_atual = ++minutos_atual;
+                        segundos_atual = "00";
+                        if (minutos_atual < 10) {
+                            minutos_atual = "0" + minutos_atual;
+                        }
                         horario_atual.innerText = horas_atual + ":" + minutos_atual + ":" + segundos_atual;
                     }
 
                     if (minutos_atual >= 60) {
-                        horas_atual = Number(++horas_atual);
-                        minutos_atual = Number("00");
+                        horas_atual = ++horas_atual;
+                        minutos_atual = "00";
                         horario_atual.innerText = horas_atual + ":" + minutos_atual + ":" + segundos_atual;
                     }
 
                     if (horas_atual > 23) {
-                        horas_atual = Number("00");
+                        horas_atual = "00";
                         horario_atual.innerText = horas_atual + ":" + minutos_atual + ":" + segundos_atual;
                     }
 
@@ -205,6 +215,10 @@ var process = () => {
                     // Desenvolver funcao para este innerText
                 }
             },
+
+            alignItems: function () {
+                document.querySelector(".pageTitle").style.textAlign = "center";
+            }
         }
     }
     return processo;

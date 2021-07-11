@@ -43,14 +43,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-12 col-sm-2 col-md-2">
-                    <button class="btn btn-primary" name="export" id="export">
-                        Exportar
-                    </button>
-                </div>
-            </div>
         </div>
     </div>
 
