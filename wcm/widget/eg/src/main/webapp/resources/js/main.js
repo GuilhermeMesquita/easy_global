@@ -124,9 +124,9 @@ var process = () => {
                 scrollX: true,
                 dom: 'Bfrtip',
                 buttons: [
-                    { extend: 'excel', className: 'btn btn-outline-secondary', id: 'excel-mr' },
+                    { extend: 'excel', text: '<i class="fluigicon fluigicon-export icon-sm"></i> Excel', className: 'btn btn-outline-secondary' },
                     { extend: 'pdf', className: 'btn btn-outline-secondary' },
-                    { extend: 'print', className: 'btn btn-outline-secondary' }
+                    { extend: 'print', text: '<i class="fluigicon fluigicon-print icon-sm"></i> Imprimir', className: 'btn btn-outline-secondary' }
                 ],
                 language: {
                     sSearch: 'Buscar:',
@@ -151,6 +151,7 @@ var process = () => {
 
             // Ajusta o surgimento das informações dinâmicas para juntar ao header.
             $(".dataTables_scrollBody").css("margin-top", "-2%");
+            $(".dt-buttons").addClass("btn-group");
         },
 
         // Método responsável por mostrar o toast de alerta.
