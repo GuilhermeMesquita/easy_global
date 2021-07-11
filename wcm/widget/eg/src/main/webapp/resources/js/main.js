@@ -19,6 +19,7 @@ var process = () => {
             this.events();
             await this.reqTimezone();
             this.onload.getSeconds();
+            this.onload.alignItems();
         },
 
         // Função que retorna os valores do DS customizado (Formulário Auxiliar de cadastro de filiais)
@@ -218,6 +219,9 @@ var process = () => {
 
             alignItems: function () {
                 document.querySelector(".pageTitle").style.textAlign = "center";
+                document.querySelector(".dt-buttons").style.display = "flex"
+                document.querySelector(".dt-buttons").style.justifyContent = "flex-end"
+                document.querySelector(".dt-buttons").style.marginBottom = "2%"
             }
         }
     }
