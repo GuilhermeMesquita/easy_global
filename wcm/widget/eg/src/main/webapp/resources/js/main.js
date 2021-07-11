@@ -151,6 +151,7 @@ var process = () => {
 
             // Ajusta o surgimento das informações dinâmicas para juntar ao header.
             $(".dataTables_scrollBody").css("margin-top", "-2%");
+            // Adiciona a classe do BootStrap que junta os botões do DataTables em um "grupo".
             $(".dt-buttons").addClass("btn-group");
         },
 
@@ -195,8 +196,6 @@ var process = () => {
                         segundos_atual = "0" + segundos_atual;
                     }
 
-                    // var horas_contador = horario_atual.innerText.split(":")[0] = horas_atual;
-
                     if (segundos_atual >= 60) {
                         minutos_atual = ++minutos_atual;
                         segundos_atual = "00";
@@ -218,10 +217,9 @@ var process = () => {
                     }
 
                     horario_atual.innerText = horas_atual + ":" + minutos_atual + ":" + segundos_atual;
-                    // Desenvolver funcao para este innerText
                 }
             },
-
+            // Método responsável por alinhar alguns elementos da página no Fluig após a requisição.
             alignItems: function () {
                 document.querySelector(".pageTitle").style.textAlign = "center";
                 document.querySelector(".dt-buttons").style.display = "flex";
