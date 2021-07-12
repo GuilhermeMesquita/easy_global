@@ -12,7 +12,7 @@ Easy Global | Connecting your business
 <h2>:exploding_head:Funcionamento</h2>
 <p>No ambiente Fluig, inicialmente o usuário que possui acesso aos Documentos, cadastra um <b>único registro</b> dos <b>países da empresa</b> no formulário auxiliar do "Cadastro dos países", depois o mesmo necessita cadastrar no formulário auxiliar do "Cadastro filiais", um <b>único registro</b> inserindo informações sobre o <em>número da filial, continente em que a filial está localizada, cidade em que a filial está localizada e o horário de funcionamento da filial</em>. Note que o país em que a filial pertence é puxada através do preenchimento do formulário auxiliar <b>anterior</b> (Cadastro dos países), conforme anexo abaixo:</p>
 <img src= "./src/media1.gif" alt="Cadastro dos países e filiais nos formulários auxiliares">
-	:spiral_notepad: É bastante importante ressaltar que é necessário respeitar os seguintes padrões para que a requisição da API dos países venham de maneira correta:
+	:spiral_notepad: É bastante importante ressaltar que é necessário respeitar os seguintes padrões para que a requisição da API dos países venha de maneira correta:
 <ul>
 <li>Os nomes dos países necessitam estar escritos no idioma inglês;</li>
 <li>Na hora do preenchimento do "horário de funcionamento", necessita respeitar o seguinte formato: 
